@@ -1,0 +1,169 @@
+{
+  "features": [
+    "depth",
+    "mag",
+    "nst",
+    "dmin",
+    "gap"
+  ],
+  "log_features": [
+    "depth",
+    "dmin",
+    "nst"
+  ],
+  "k_final": 3,
+  "k_elbow": 5,
+  "k_range": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "seed": 42,
+  "n_init": 20,
+  "eval": [
+    {
+      "K": 2,
+      "inertia": 37693.214713,
+      "silhouette": 0.232621,
+      "davies_bouldin": 1.617192
+    },
+    {
+      "K": 3,
+      "inertia": 31200.015682,
+      "silhouette": 0.22172,
+      "davies_bouldin": 1.469615
+    },
+    {
+      "K": 4,
+      "inertia": 27119.26974,
+      "silhouette": 0.212281,
+      "davies_bouldin": 1.405848
+    },
+    {
+      "K": 5,
+      "inertia": 24187.699313,
+      "silhouette": 0.199743,
+      "davies_bouldin": 1.372329
+    },
+    {
+      "K": 6,
+      "inertia": 22226.627469,
+      "silhouette": 0.197024,
+      "davies_bouldin": 1.361971
+    },
+    {
+      "K": 7,
+      "inertia": 20662.067371,
+      "silhouette": 0.187608,
+      "davies_bouldin": 1.350333
+    },
+    {
+      "K": 8,
+      "inertia": 19342.684425,
+      "silhouette": 0.189076,
+      "davies_bouldin": 1.319697
+    },
+    {
+      "K": 9,
+      "inertia": 18219.809022,
+      "silhouette": 0.19399,
+      "davies_bouldin": 1.330469
+    },
+    {
+      "K": 10,
+      "inertia": 17219.713419,
+      "silhouette": 0.193717,
+      "davies_bouldin": 1.311595
+    }
+  ],
+  "raw_rows": 10000,
+  "raw_cols": 25,
+  "clean_rows": 9984,
+  "cleaning_log": [
+    [
+      "Bukan gempa tektonik (type = landslide)",
+      2
+    ],
+    [
+      "Nilai tak terukur (nst = gap = dmin = 0)",
+      14
+    ],
+    [
+      "ID duplikat",
+      0
+    ],
+    [
+      "Baris duplikat (waktu, lokasi, kedalaman, magnitudo)",
+      0
+    ]
+  ],
+  "date_min": "2025-07-30",
+  "date_max": "2026-10-13",
+  "feature_roles": [
+    [
+      "depth",
+      "DIPAKAI",
+      "Kedalaman hiposenter (km): pembeda utama jenis gempa dangkal vs dalam."
+    ],
+    [
+      "mag",
+      "DIPAKAI",
+      "Magnitudo: ukuran kekuatan gempa."
+    ],
+    [
+      "nst",
+      "DIPAKAI",
+      "Jumlah stasiun seismik yang merekam: indikator seberapa jelas gempa terekam."
+    ],
+    [
+      "dmin",
+      "DIPAKAI",
+      "Jarak horizontal ke stasiun terdekat (derajat): menggambarkan kerapatan jaringan di sekitar episentrum."
+    ],
+    [
+      "gap",
+      "DIPAKAI",
+      "Celah azimut stasiun (derajat): kualitas geometri jaringan pemantau."
+    ],
+    [
+      "sig",
+      "TIDAK",
+      "Skor signifikansi turunan magnitudo (korelasi dengan mag = 0,80) -> redundan, akan menggandakan bobot magnitudo."
+    ],
+    [
+      "rms",
+      "TIDAK",
+      "Residual waktu tempuh: nyaris tidak berkorelasi dengan fitur lain (|r| < 0,15) sehingga hanya menambah derau."
+    ],
+    [
+      "latitude / longitude",
+      "TIDAK",
+      "Koordinat geografis: jarak Euclidean pada derajat tidak valid di bola bumi. Dipakai untuk peta, bukan untuk clustering."
+    ],
+    [
+      "tsunami",
+      "TIDAK",
+      "Variabel biner (0/1) dan sangat jarang (<1%): dipakai untuk profil klaster."
+    ],
+    [
+      "confidence_score",
+      "TIDAK",
+      "Anotasi kualitas data (hanya 2 nilai), bukan pengukuran fisik."
+    ]
+  ],
+  "top_features": [
+    "depth",
+    "mag",
+    "nst",
+    "gap",
+    "dmin"
+  ],
+  "silhouette_final": 0.22171978039949855,
+  "inertia_final": 31200.01071098755
+}
